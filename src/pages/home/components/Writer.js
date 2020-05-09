@@ -33,12 +33,12 @@ class Writer extends Component {
 	getAuthorListJSX () {
 		let { authorList } = this.props;
 		if (authorList.size === 0) return;
-		return authorList.map(e => {
+		return authorList.map((e, i) => {
 			return (
 				<li key={e.get('id')}>
 					<div className='headPortrait'>
 						<a href={e.get('authorPage')}>
-							<img alt='' src={require('../../../static/img/touxiang.webp')} />
+							<img alt='' src={require('../../../static/img/touxiang'+ (i + 1) +'.webp')} />
 							{/* <img src={e.get('imgUrl')} /> */}
 						</a>
 					</div>
@@ -62,7 +62,6 @@ class Writer extends Component {
 	changeAuthors (dom) {
 		let ori = dom.style.transform;
 		let angle = ori.replace(/[^0-9]/gi, '');
-		console.log(angle);
 		dom.style.transform = 'rotateZ(' + (Number(angle) + 360 )+ 'deg)';
 	}
 };

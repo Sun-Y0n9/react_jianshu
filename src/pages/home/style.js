@@ -259,7 +259,7 @@ export const WriterWrapper = styled.div`
 			.top{
 				display: flex;
 				justify-content: space-between;
-				span:nth-child(1){
+				a{
 					color: #333;
 					font-size: 14px;
 				}
